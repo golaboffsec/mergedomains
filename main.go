@@ -24,7 +24,7 @@ func main() {
 	printBanner()
 	// Solicitar ao usuário os nomes dos arquivos
 	var file1Name, file2Name, outputFileName string
-	fmt.Print("Digite o nome do primeiro arquivo (ex: fulldomains200.txt): ")
+	fmt.Print("Digite o nome do primeiro arquivo (ex: bol_fulldomains200.txt): ")
 	fmt.Scanln(&file1Name)
 	fmt.Print("Digite o nome do segundo arquivo (ex: domains_fin.txt): ")
 	fmt.Scanln(&file2Name)
@@ -61,11 +61,11 @@ func main() {
 	}
 	fmt.Printf("\nQuantidade de domínios comuns: %d\n", numCommon)
 
-	fmt.Println("\nDomínios únicos em domains_fin.txt:")
+	fmt.Printf("\nDomínios únicos em %s.txt:", file2Name)
 	for _, domain := range uniqueFinDomains {
 		fmt.Println(domain)
 	}
-	fmt.Printf("\nQuantidade de domínios únicos em domains_fin.txt: %d\n", numUniqueFin)
+	fmt.Printf("\nQuantidade de domínios únicos em %s.txt: %d\n", file2Name, numUniqueFin)
 
 	// Mesclar as duas listas e salvar em um novo arquivo
 	mergedDomains := make(map[string]struct{})
